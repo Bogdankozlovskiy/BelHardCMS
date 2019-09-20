@@ -1,0 +1,25 @@
+{% extends 'client/base.html' %}
+
+{% block title %}
+    Client page
+{% endblock%}
+
+{% block content %}
+     <h1 class="mb-5"> Vacancies: </h1>
+
+    {% for vacancy in vacancies %}
+
+        <div class="card mb-4">
+            <div class="card-header">
+                <b>{{ vacancy.organization }}</b>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">{{ vacancy.state }}</h5>
+                <p class="card-text"><b>{{ vacancy.salary }}</b></p>
+                <p class="card-text">{{ vacancy.description | truncatewords:20 }}</p>
+                <a href="{% url 'vacancy_detail_url' slug=vacancy.slug %}" class="btn btn-secondary">Подробнее</a>
+            </div>
+        </div>
+
+    {% endfor %}
+{% endblock %}
