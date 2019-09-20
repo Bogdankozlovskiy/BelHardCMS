@@ -91,6 +91,8 @@ class CV(models.Model):
 class State(models.Model):
     state_word = models.CharField(max_length=100)
 
+class Modul(models.Model):
+    modul_word = models.CharField(max_length=100)
 
 class Client(models.Model):
     user_client = models.OneToOneField(UserModel, on_delete=models.CASCADE)
@@ -131,8 +133,9 @@ class Telephone(models.Model):
     telephone_number = models.CharField(max_length=20)
     client = models.ForeignKey(Client, on_delete=models.CASCADE)
 
-    def save(self, *args, **kwargs):
-        # do something
-        super().save(*args, **kwargs)
 
+
+def save(self, *args, **kwargs):
+    # do something
+       super().save(*args, **kwargs)
 
