@@ -1,0 +1,42 @@
+{% extends 'client/base.html' %}
+
+{% block title %}
+    {{vacancy.state}}
+{% endblock %}
+
+{% block content %}
+    <h1 class="mt-5">
+        {{ vacancy.state }}
+    </h1>
+    <p>
+        <b>{{ vacancy.salary }}</b>
+    </p>
+    <p>
+        <b>{{ vacancy.organization }}</b>
+    </p>
+    <p>
+        {{ vacancy.address }}
+    </p>
+    <p>
+        {{ vacancy.employment }}
+    </p>
+    <p>
+        {{ vacancy.description }}
+    </p>
+    <p>
+        {{ vacancy.skills }}
+    </p>
+    <p>
+        {{ vacancy.requirements }}
+    </p>
+    <p>
+        {{ vacancy.duties }}
+    </p>
+    <p>
+        {{ vacancy.conditions }}
+    </p>
+
+    <a href="{% url 'vacancies_list' %}" class="btn btn-secondary">Назад</a>
+
+{% endblock %}
+
